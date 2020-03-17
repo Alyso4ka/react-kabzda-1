@@ -10,6 +10,7 @@ const Like = (props) => {
             {props.count}
 
 
+
         </div>
     )
 };
