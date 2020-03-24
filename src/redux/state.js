@@ -4,11 +4,7 @@ let state = {
         posts: [
             {message: "Hi, how are you?", likesCount: 22, id: 1},
             {message: "It's my first post", likesCount: 55, id: 2}
-
-
         ],
-
-
     },
 
 
@@ -29,9 +25,13 @@ let state = {
             {message: "Yo", id: 4},
             {message: "Yo", id: 5},
         ]
+    },
+
+    sidebar: {
+
     }
-
-
 }
 
+
 export default state;
+
