@@ -6,8 +6,6 @@ let state = {
             {message: "It's my first post", likesCount: 55, id: 2}
         ],
     },
-
-
     dialogsPage: {
 
         dialogs: [
@@ -26,12 +24,20 @@ let state = {
             {message: "Yo", id: 5},
         ]
     },
-
     sidebar: {
 
     }
 }
 
+export let addPost = (postMessage) => {
+    let newPost= {
+        message: postMessage,
+        likesCount: 0,
+        id: 3,
+
+    };
+    state.profilePage.posts.push(newPost);
+}
 
 export default state;
 

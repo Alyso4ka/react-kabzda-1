@@ -14,6 +14,8 @@ const MyPosts = (props) => {
         alert (text);
     };
 
+
+
     return (
         <div className={s.postsBlock}>
             <h3>My posts</h3>
