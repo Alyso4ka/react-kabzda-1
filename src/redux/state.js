@@ -11,7 +11,7 @@ let state = {
         newPostText: 'it-kamasutra.com'
     },
     dialogsPage: {
-
+        newMessageText: '',
         dialogs: [
             {name: "Dimych", id: 1},
             {name: "Andrey", id: 2},
@@ -47,10 +47,29 @@ export let addPost = () => {
     rerenderEntireTree(state);
 }
 
+export let addMessage = () => {
+    let newMessage= {
+        message: state.dialogsPage.newMessageText,
+        id: 6,
+
+
+    };
+    state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.newMessageText = '';
+    rerenderEntireTree(state);
+}
+
+
+
+
 
 export let updateNewPostText = (newText) => {
-
     state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+export let updateNewMessageText = (newMessage) => {
+    state.dialogsPage.newMessageText = newMessage;
     rerenderEntireTree(state);
 }
 
