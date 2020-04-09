@@ -40,7 +40,6 @@ let store = {
         this._callSubscriber = observer;
     },
 
-
     addMessage() {
         let newMessage = {
             message: this._state.dialogsPage.newMessageText,
