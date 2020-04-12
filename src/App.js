@@ -15,27 +15,27 @@ const App = (props) => {
 
 
     return (
-        <BrowserRouter>
-            <div className='app-wrapper'>
-                <Header/>
-                <Navbar/>
-                <div class='app-wrapper-content'>
-                    <Route path='/dialogs' render={() => <Dialogs dialogPage={props.state.dialogsPage}
-                                                                  addMessage={props.addMessage}
-                                                                  updateNewMessageText={props.updateNewMessageText}/>}/>
-                    <Route path='/profile' render={() => <Profile
-                        profilePage={props.state.profilePage}
-                        dispatch={props.dispatch}
-                      />}/>
-                    <Route path='/news' render={() => <News/>}/>
-                    <Route path='/music' render={() => <Music/>}/>
-                    <Route path='/settings' render={() => <Settings/>}/>
 
+        <div className='app-wrapper'>
+            <Header/>
+            <Navbar/>
+            <div class='app-wrapper-content'>
+                <Route path='/dialogs' render={() => <Dialogs dialogPage={props.state.dialogsPage}
+                                                              addMessage={props.addMessage}
+                                                              updateNewMessageText={props.updateNewMessageText}/>}/>
+                <Route path='/profile' render={() => <Profile
+                    profilePage={props.state.profilePage}
+                    dispatch={props.dispatch}
+                />}/>
+                <Route path='/news' render={() => <News/>}/>
+                <Route path='/music' render={() => <Music/>}/>
+                <Route path='/settings' render={() => <Settings/>}/>
 
-                </div>
 
             </div>
-        </BrowserRouter>)
+
+        </div>
+    )
 }
 
 
