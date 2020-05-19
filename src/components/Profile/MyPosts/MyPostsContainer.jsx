@@ -8,10 +8,10 @@ const MyPostsContainer = (props) => {
 
 
     return (
-        <StoreContext.Consumer> {
+        <StoreContext.Consumer>
+            {
             (store) => {
                 let state = props.store.getState();
-
 
                 let addPost = () => {
                     store.dispatch(addPostActionCreator());

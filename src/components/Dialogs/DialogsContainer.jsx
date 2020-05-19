@@ -7,31 +7,26 @@ import StoreContext from "../../StoreContext";
 const DialogsContainer = () => {
 
 
-    return (
-        <StoreContext.Consumer> {
-            (store) => {
-
-                let state = store.getState().dialogsPage;
-
+    return <StoreContext.Consumer>
+            {
+                (store) => {
 
                 let onSendMessageClick = () => {
-                    store.dispatch(sendMessageCreator())
+                    store.dispatch(sendMessageCreator());
                 }
 
                 let onNewMessageChange = (body) => {
-
-
-                    store.dispatch(updateNewMessageBodyCreator(body))
+                    store.dispatch(updateNewMessageBodyCreator(body));
                 }
 
 
                 return <Dialogs updateNewMessageBodyCreator={onNewMessageChange}
                          sendMessage={onSendMessageClick}
-                         dialogsPage={state}/>
+                         dialogsPage={store.getState().dialogsPage}/>
             }
         }
         </StoreContext.Consumer>
-    )
+
 }
 
 
