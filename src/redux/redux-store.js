@@ -12,6 +12,8 @@ let reducers = combineReducers({
 
 let store = createStore(reducers);
 
+window.store = store // делаем глобальный объект store
+
 export default store;
 
 
