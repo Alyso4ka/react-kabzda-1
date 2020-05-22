@@ -24,21 +24,21 @@ let initialState = {
 
 const dialogsReducer = (state = initialState, action) => {
 
-    let stateCopy = {
-        ...state,
-        // messages: [...state.messages] по сути нам достаточно сделать поверхностную копию только стпейта, смотри 48ПС
-
-    };
-
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_BODY:
-            stateCopy.newMessageBody = action.body;
-            return stateCopy;
+            return {
+                ...state,
+                newMessageBody: action.body
+            }
+
         case SEND_MESSAGE:
             let body = state.newMessageBody;
-            stateCopy.newMessageBody = '';
-            stateCopy.messages.push({message: body, id: 6});
-            return stateCopy;
+           return {
+                ...state,
+                newMessageBody: '',
+                messages: [...state.messages, {message: body, id: 6}]
+            }
+
         default:
             return state;
     }
