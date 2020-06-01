@@ -5,22 +5,23 @@ import userPhoto from '../../assets/images/user.png';
 
 
 let Users = (props) => {
+    let getUsers = () => {
 
-if (props.users.length === 0) {
-    axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
-        props.setUsers(response.data.items)
-    })
+        if (props.users.length === 0) {
+            axios.get('https://social-network.samuraijs.com/api/1.0/users')
+                .then(response => {
+                    props.setUsers(response.data.items)
+                })
+        }
+    }
 
-}
-
-
-    return (
-    <div>
-            {
-                props.users.map ( u => <div key={u.id}>
+    return <div>
+        <button onClick={getUsers}>GET USERS</button>
+        {
+            props.users.map(u => <div key={u.id}>
     <span>
         <div>
-            <img className={styles.userPhoto} src={u.photos.small != null ? u.photos.small: userPhoto}/>
+            <img className={styles.userPhoto} src={u.photos.small != null ? u.photos.small : userPhoto}/>
         </div>
         <div>
             {u.followed
@@ -33,7 +34,7 @@ if (props.users.length === 0) {
 
         </div>
     </span>
-                    <span>
+                <span>
         <span>
             <div>{u.name}</div>
             <div>{u.status}</div>
@@ -43,10 +44,10 @@ if (props.users.length === 0) {
             <div>{'u.location.city'}</div>
         </span>
     </span>
-                </div>)
-            }
-        </div>
-    )
+            </div>)
+        }
+    </div>
+
 
 }
 
