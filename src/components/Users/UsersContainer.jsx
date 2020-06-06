@@ -28,7 +28,6 @@ class UsersContainer extends React.Component {
             })
     }
 
-
     render() {
         return <>
             {this.props.isFetching ? <img src={preloader}/> : null}
