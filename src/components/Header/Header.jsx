@@ -3,7 +3,7 @@ import s from './Header.module.css'
 import {NavLink} from "react-router-dom";
 
 
-const Header = () => {
+const Header = (props) => {
     return <header className={s.header}>
         <img src='https://www.freelogodesign.org/Content/img/logo-samples/flooop.png' />,
         <div className={s.loginBlock}>
@@ -15,4 +15,4 @@ const Header = () => {
 
 
 }
-export default Header; 
+export default Header;
