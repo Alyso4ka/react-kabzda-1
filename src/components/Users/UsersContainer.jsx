@@ -17,8 +17,6 @@ import {getUsers, usersAPI} from "../../api/api";
 class UsersContainer extends React.Component {
     componentDidMount() {
         this.props.toggleIsFetching(true);
-
-
         usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
             this.props.toggleIsFetching(false);
             this.props.setUsers(data.items)
@@ -26,7 +24,6 @@ class UsersContainer extends React.Component {
         })
 
     }
-
 
     onPageChanged = (pageNumber) => {
         this.props.setCurrentPage(pageNumber);
