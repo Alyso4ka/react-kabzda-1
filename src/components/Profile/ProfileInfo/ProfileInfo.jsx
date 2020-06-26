@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
 if (!props.profile) {
@@ -10,11 +11,13 @@ if (!props.profile) {
     return (
         <div>
             <div>
-                <img src='https://www.w3schools.com/howto/img_snow_wide.jpg'/>
+                {/*<img src='https://www.w3schools.com/howto/img_snow_wide.jpg'/>*/}
                 <div>
                     <div className={s.descriptionBlock}>
                         <img src={props.profile.photos.large}/>
-                        ava + description
+                        <div>
+                        <ProfileStatus status={'hello my friends'}/>
+                        </div>
                     </div>
                 </div>
             </div>
