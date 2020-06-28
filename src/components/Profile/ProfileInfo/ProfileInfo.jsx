@@ -3,9 +3,9 @@ import s from './ProfileInfo.module.css';
 import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
-if (!props.profile) {
-    return <div>Preolader</div>
-}
+    if (!props.profile) {
+        return <div>Preolader</div>
+    }
 
 
     return (
@@ -16,7 +16,9 @@ if (!props.profile) {
                     <div className={s.descriptionBlock}>
                         <img src={props.profile.photos.large}/>
                         <div>
-                        <ProfileStatus status={props.status}/>
+                            <ProfileStatus status={props.status}
+                                           updateStatus={props.updateStatus}
+                            />
                         </div>
                     </div>
                 </div>
