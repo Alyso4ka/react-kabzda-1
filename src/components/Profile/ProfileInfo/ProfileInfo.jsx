@@ -10,24 +10,16 @@ const ProfileInfo = (props) => {
 
     return (
         <div>
-            <div>
-                {/*<img src='https://www.w3schools.com/howto/img_snow_wide.jpg'/>*/}
-                <div>
-                    <div className={s.descriptionBlock}>
-                        <img src={props.profile.photos.large}/>
-                        <div>
-                            <ProfileStatus status={props.status}
-                                           updateStatus={props.updateStatus}
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div className={s.descriptionBlock}>
+                <img src={props.profile.photos.large}/>
 
+                <ProfileStatus status={props.status}
+                               updateStatus={props.updateStatus}/>
+            </div>
         </div>
+
     )
 }
-
 
 export default ProfileInfo;
 

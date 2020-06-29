@@ -1,14 +1,10 @@
 import React from 'react';
 import Profile from "../Profile";
-import * as axios from "axios";
 import {connect} from "react-redux";
 import {getStatus, getUserProfile, updateStatus} from "../../../redux/profile-reducer";
 import {withRouter} from "react-router-dom";
-import {usersAPI} from "../../../api/api";
-import Redirect from "react-router-dom/es/Redirect";
-import {withAuthRedirect} from "../../../hoc/withAuthRedirect";
 import {compose} from "redux";
-import Dialogs from "../../Dialogs/Dialogs";
+
 
 class ProfileContainer extends React.Component {
     componentDidMount () {
@@ -17,9 +13,7 @@ class ProfileContainer extends React.Component {
             userId = 7415;
         }
 this.props.getUserProfile(userId);
-        setTimeout(() =>{
-            this.props.getStatus(userId);
-        }, 1000);
+    this.props.getStatus(userId)
 
 }
 
