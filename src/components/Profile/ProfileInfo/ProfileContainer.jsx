@@ -19,7 +19,6 @@ this.props.getUserProfile(userId);
 
     render() {
 
-
         return (
             <div>
             <Profile {...this.props}
