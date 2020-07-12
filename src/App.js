@@ -21,10 +21,14 @@ import {initializeApp} from "./redux/app-reducer";
 
 class App extends React.Component {
     componentDidMount() {
-        this.props.getAuthUserData();
+        this.props.initializeApp();
     }
 
     render() {
+        if (!this.props.initialized) {
+            return <div>Preloader</div>
+        }
+        return
 
         return (
 
@@ -48,7 +52,12 @@ class App extends React.Component {
     }
 }
 
+const mapStateToProps = (state) => ({
+    initialized: state.app.initialized
+
+})
+
 
 export default compose(
     withRouter,
-    connect(null, {initializeApp}))(App);
+    connect(mapStateToProps, {initializeApp}))(App);

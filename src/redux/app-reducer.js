@@ -41,13 +41,12 @@ export const initializedSuccess = () => (dispatch) => {
 }
 
 export const initializeApp = () => (dispatch) => {
-    dispatch(getAuthUserData());
+    let promise = dispatch(getAuthUserData());
     dispatch(initializedSuccess());
-
-
-
-
-
+    Promise.all([promise])
+        .then(()=> {
+        dispatch(initializedSuccess());
+    })
 }
 
 
