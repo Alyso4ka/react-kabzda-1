@@ -1,15 +1,11 @@
-import {authAPI} from "../api/api";
-import {stopSubmit} from "redux-form";
+
 import {getAuthUserData} from "./auth-reducer";
 
 const INITIALIZED_SUCCESS = 'INITIALIZED_SUCCESS';
 
 
 let initialState = {
-
     initialized: false,
-
-
 }
 
 
@@ -29,16 +25,8 @@ const appReducer = (state = initialState, action) => {
 
 }
 
-export const initializedSuccess = () => ({type: INITIALIZED_SUCCESS, payload: {userId, email, login, isAuth}})
-export const initialized = () => (dispatch) => {
+export const initializedSuccess = () => ({type: INITIALIZED_SUCCESS})
 
-}
-
-
-export const initializedSuccess = () => (dispatch) => {
-
-
-}
 
 export const initializeApp = () => (dispatch) => {
     let promise = dispatch(getAuthUserData());
